@@ -1,0 +1,92 @@
+// only importing the required bulma elements
+@import "~bulma/sass/utilities/_all";
+@import "~bulma/sass/base/_all";
+
+@import "~bulma/sass/elements/container";
+@import "~bulma/sass/elements/button";
+@import "~bulma/sass/elements/title";
+
+@import "~bulma/sass/components/navbar";
+@import "~bulma/sass/components/panel";
+@import "~bulma/sass/components/message";
+
+@import "~bulma/sass/grid/columns";
+
+// application css
+
+.text-center {
+  text-align: center !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.d-flex {
+  display: flex;
+}
+
+nav {
+  margin-bottom: 30px;
+}
+
+.App {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.sizes-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+
+  & .size-name {
+    text-transform: capitalize;
+  }
+
+  & .size-dim {
+    margin-left: auto;
+    color: #bbb;
+    font-size: 0.9em;
+  }
+
+  & .panel-block.is-active .size-name {
+    color: $info;
+    font-weight: 600;
+  }
+}
+
+.image-cropper {
+  & .image-container {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    background-color: #eee;
+  }
+
+  & .button {
+    margin-top: 30px;
+  }
+}
+
+.image-uploader {
+  & button {
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
+}
+
+.uploaded-image-name {
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.uploaded-image {
+  display: block;
+  margin: auto;
+  margin-bottom: 60px;
+}
