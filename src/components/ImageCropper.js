@@ -35,14 +35,16 @@ class ImageCropper extends PureComponent {
       return;
     }
 
-    this.cropper = new Cropper(this.imageElement.current, {
-      zoomable: false,
-      scalable: false,
-      cropBoxResizable: true,
-      dragMode: "none",
-      autoCropArea: 0.9,
-      aspectRatio: this.props.width / this.props.height,
-    });
+    if (this.imageElement.current) {
+      this.cropper = new Cropper(this.imageElement.current, {
+        zoomable: false,
+        scalable: false,
+        cropBoxResizable: true,
+        dragMode: "none",
+        autoCropArea: 0.9,
+        aspectRatio: this.props.width / this.props.height,
+      });
+    }
   }
 
   resizeCroppedCanvas(canvas) {
