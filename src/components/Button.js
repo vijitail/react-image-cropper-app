@@ -14,7 +14,12 @@ const defaultProps = {
 };
 
 const Button = ({ variant, text, disabled, onClick, ...props }) => (
-  <button className={`button is-${variant}`} onClick={onClick} {...props}>
+  <button
+    className={`button is-${variant}`}
+    onClick={onClick}
+    disabled={disabled}
+    {...props}
+  >
     {text}
   </button>
 );
