@@ -37,7 +37,9 @@ class ImageUploader extends Component {
           uploadedImage.width !== uploadedImage.height &&
           uploadedImage.width !== REQUIRED_IMAGE_SIZE.width
         ) {
-          this.props.onUploadError("Incorrect Image Dimensions!! 😟");
+          this.props.onUploadError(
+            "Incorrect Image Dimensions!! 😟. Please upload an image of size 1024 x 1024"
+          );
         } else {
           this.setState({ hasUploaded: true }, () => {
             this.props.onUploadSuccess(reader.result);
