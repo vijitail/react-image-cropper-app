@@ -5,13 +5,15 @@ const propTypes = {
   variant: PropTypes.string,
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool,
 };
 
 const defaultProps = {
   variant: "default",
+  disabled: false,
 };
 
-const Button = ({ variant, text, onClick, ...props }) => (
+const Button = ({ variant, text, disabled, onClick, ...props }) => (
   <button className={`button is-${variant}`} onClick={onClick} {...props}>
     {text}
   </button>
