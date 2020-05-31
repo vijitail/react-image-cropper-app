@@ -59,10 +59,18 @@ nav {
 
 .image-cropper {
   & .image-container {
-    width: 600px;
+    max-width: 600px;
     height: 600px;
     margin: auto;
     background-color: #eee;
+
+    @media screen and (max-width: 600px) {
+      height: 100vw;
+    }
+
+    &.has-img {
+      height: auto !important;
+    }
   }
 
   & .button {

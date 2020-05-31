@@ -55,10 +55,8 @@ class ImageCropper extends PureComponent {
 
       resizedImage.onload = () => {
         const ctx = canvas.getContext("2d");
-
         canvas.width = this.props.width;
         canvas.height = this.props.height;
-        console.log(this.props.width, this.props.height);
         ctx.drawImage(resizedImage, 0, 0, this.props.width, this.props.height);
         resolve(canvas);
       };
@@ -68,7 +66,6 @@ class ImageCropper extends PureComponent {
   async cropImage() {
     const canvas = this.cropper.getCroppedCanvas();
     const resizedCanvas = await this.resizeCroppedCanvas(canvas);
-    console.log("RESIZED CANVAS", resizedCanvas);
     const resizedImageSrc = resizedCanvas
       .toDataURL("image/png")
       .replace(/^data:image\/[a-z]+;base64,/, "");
@@ -79,7 +76,7 @@ class ImageCropper extends PureComponent {
     const hasSrc = !!this.props.src;
     return (
       <div className="image-cropper">
-        <div className="image-container">
+        <div className={`image-container ${hasSrc && "has-img"}`}>
           {hasSrc && (
             <img
               ref={this.imageElement}
